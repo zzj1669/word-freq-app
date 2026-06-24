@@ -4,7 +4,7 @@
 """
 
 import streamlit as st
-from streamlit_echarts import st_pyecharts
+from streamlit_echarts import st_echarts
 from pyecharts.charts import WordCloud, Bar, Line, Pie, Radar, Scatter, Funnel
 from pyecharts import options as opts
 import pandas as pd
@@ -258,7 +258,7 @@ def main():
             if chart_func:
                 try:
                     chart = chart_func(top_words, title=f"{chart_type} - {result['title']}")
-                    st_pyecharts(chart, height=500)
+                    st_echarts(chart, height=500)
                 except Exception as e:
                     st.error(f"图表渲染失败: {str(e)}")
             
